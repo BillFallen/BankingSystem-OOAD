@@ -33,15 +33,6 @@ public class LoginView {
         passwordField.setPromptText("Enter Password");
 
         loginButton = new Button("Log In");
-        // TEMPORARY LOGIN LOGIC (Controller will handle this next week)
-        loginButton.setOnAction(e -> {
-            // Create a fake customer for testing the dashboard
-            com.banking.model.Customer testCustomer = new com.banking.model.Customer("C001", "Kevin", "Walker", "Gaborone", "555-1234");
-
-            // Open the AccountView
-            AccountView accountView = new AccountView(stage, testCustomer);
-            accountView.show();
-        });
 
         // Layout
         GridPane grid = new GridPane();
