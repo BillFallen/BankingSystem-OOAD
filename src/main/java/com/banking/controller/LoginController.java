@@ -1,5 +1,6 @@
 package com.banking.controller;
 
+import com.banking.dao.CustomerDAO;
 import com.banking.model.Customer;
 import com.banking.view.AccountView;
 import com.banking.view.LoginView;
@@ -34,12 +35,17 @@ public class LoginController {
         if (username.equals("admin") && password.equals("password123")) {
             System.out.println("Login Successful! Redirecting...");
 
-            // Create a dummy customer (Later, we will fetch this from the DAO)
-            Customer customer = new Customer("C001", "Kevin", "Walker", "Gaborone", "555-1234");
+            // 1. Create a dummy customer
+            Customer customer = new Customer("C0010", "Octrio", "Addaman", "Gaborone", "555-12353");
 
-            // Open the dashboard
+            // 2. Save them to the database using the DAO
+            CustomerDAO dao = new CustomerDAO();
+            dao.saveCustomer(customer);
+
+            // 3. Open the dashboard
             AccountView accountView = new AccountView(stage, customer);
             accountView.show();
+
         } else {
             System.out.println("Error: Invalid credentials. Try admin / password123");
         }

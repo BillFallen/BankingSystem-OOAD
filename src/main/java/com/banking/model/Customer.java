@@ -25,4 +25,10 @@ public class Customer {
 
     public String getFullName() { return firstName + " " + surname; }
     public List<Account> getAccounts() { return accounts; }
+
+    public String getCustomerId() { return customerId; }
+    public String getFirstName() { return firstName; }
+    public String getSurname() { return surname; }
+    public String getAddress() { return address; }
+    public String getContactInfo() { return contactInfo; }
 }
